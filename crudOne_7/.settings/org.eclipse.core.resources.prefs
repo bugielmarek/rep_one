@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//WebContent/WEB-INF/templates/default.jsp=UTF-8
+encoding//WebContent/WEB-INF/tiles/contacts.jsp=UTF-8
+encoding//WebContent/WEB-INF/tiles/convergences.jsp=UTF-8
+encoding//WebContent/WEB-INF/tiles/createconvergence.jsp=UTF-8
+encoding//WebContent/WEB-INF/tiles/createpayment.jsp=UTF-8
+encoding//WebContent/WEB-INF/tiles/createuser.jsp=UTF-8
+encoding//WebContent/WEB-INF/tiles/header.jsp=UTF-8
+encoding//WebContent/WEB-INF/tiles/home.jsp=UTF-8
+encoding//WebContent/WEB-INF/tiles/login.jsp=UTF-8
+encoding//WebContent/WEB-INF/tiles/users.jsp=UTF-8

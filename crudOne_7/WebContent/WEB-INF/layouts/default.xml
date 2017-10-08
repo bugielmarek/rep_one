@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+		<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+       
+
+<tiles-definitions>
+
+	<definition name="timetable.base" template="/WEB-INF/templates/default.jsp">
+		<put-attribute name="includes" value="" />
+		<put-attribute name="title" value="Terminarz" />
+		<put-attribute name="header" value="/WEB-INF/tiles/header.jsp" />
+		<put-attribute name="content" value="/WEB-INF/tiles/content.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/tiles/footer.jsp" />
+	</definition>
+
+	<definition name="login" extends="timetable.base">
+		<put-attribute name="title" value="Strona Logowania" />
+		<put-attribute name="content" value="/WEB-INF/tiles/login.jsp" />
+	</definition>
+
+	<definition name="home" extends="timetable.base">
+		<put-attribute name="title" value="Strona główna" />
+		<put-attribute name="content" value="/WEB-INF/tiles/home.jsp" />
+	</definition>
+	
+	
+	<definition name="quote" extends="timetable.base">
+		<put-attribute name="title" value="Cytat dnia" />
+		<put-attribute name="content" value="/WEB-INF/tiles/quote.jsp"/>
+	</definition>
+
+	<definition name="payments" extends="timetable.base">
+		<put-attribute name="title" value="Terminarz" />
+		<put-attribute name="content" value="/WEB-INF/tiles/payments.jsp"/>
+	</definition>
+	
+	<definition name="payment" extends="timetable.base">
+		<put-attribute name="title" value="Wpłata" />
+		<put-attribute name="content" value="/WEB-INF/tiles/payment.jsp"/>
+	</definition>
+	
+	<definition name="createpayment" extends="timetable.base">
+		<put-attribute name="title" value="Dodaj pozycję terminarza" />
+		<put-attribute name="content" value="/WEB-INF/tiles/createpayment.jsp"/>
+	</definition>
+	
+	<definition name="convergences" extends="timetable.base">
+		<put-attribute name="title" value="Akta otrzymane" />
+		<put-attribute name="content" value="/WEB-INF/tiles/convergences.jsp" />
+	</definition>
+	
+	<definition name="convergence" extends="timetable.base">
+		<put-attribute name="title" value="Akta otrzymane" />
+		<put-attribute name="content" value="/WEB-INF/tiles/convergence.jsp" />
+	</definition>
+	
+	<definition name="createconvergence" extends="timetable.base">
+		<put-attribute name="title" value="Utwórz otrzymane akta" />
+		<put-attribute name="content" value="/WEB-INF/tiles/createconvergence.jsp" />
+	</definition>
+	
+	<definition name="contacts" extends="timetable.base">
+		<put-attribute name="title" value="Kontakty" />
+		<put-attribute name="content" value="/WEB-INF/tiles/contacts.jsp" />
+	</definition>
+	
+	<definition name="contact" extends="timetable.base">
+		<put-attribute name="title" value="Kontakt" />
+		<put-attribute name="content" value="/WEB-INF/tiles/contact.jsp" />
+	</definition>
+	
+	<definition name="createcontact" extends="timetable.base">
+		<put-attribute name="title" value="Utwórz kontakt" />
+		<put-attribute name="content" value="/WEB-INF/tiles/createcontact.jsp" />
+	</definition>
+	
+	<definition name="issues" extends="timetable.base">
+		<put-attribute name="title" value="Kalendarium" />
+		<put-attribute name="content" value="/WEB-INF/tiles/issues.jsp" />
+	</definition>
+	
+	<definition name="issue" extends="timetable.base">
+		<put-attribute name="title" value="Kalendarium" />
+		<put-attribute name="content" value="/WEB-INF/tiles/issue.jsp" />
+	</definition>
+	
+	<definition name="createissue" extends="timetable.base">
+		<put-attribute name="title" value="Utwórz pozycję kalendarium" />
+		<put-attribute name="content" value="/WEB-INF/tiles/createissue.jsp" />
+	</definition>
+	
+	<definition name="users" extends="timetable.base">
+		<put-attribute name="title" value="Panel Administratora" />
+		<put-attribute name="content" value="/WEB-INF/tiles/users.jsp" />
+	</definition>
+	
+	<definition name="user" extends="timetable.base">
+		<put-attribute name="title" value="Panel Administratora" />
+		<put-attribute name="content" value="/WEB-INF/tiles/user.jsp" />
+	</definition>
+	
+		<definition name="createuser" extends="timetable.base">
+		<put-attribute name="includes" value="/WEB-INF/tiles/createuserscript.jsp" />
+		<put-attribute name="title" value="Dodaj profil" />
+		<put-attribute name="content" value="/WEB-INF/tiles/createuser.jsp" />
+	</definition>
+	
+	<definition name="denied" extends="timetable.base">
+		<put-attribute name="title" value="Brak dostępu" />
+		<put-attribute name="content" value="/WEB-INF/tiles/denied.jsp" />
+	</definition>
+
+	<definition name="error" extends="timetable.base">
+		<put-attribute name="title" value="Nieoczekiwany błąd" />
+		<put-attribute name="content" value="/WEB-INF/tiles/error.jsp" />
+	</definition>
+	
+	
+
+</tiles-definitions>
