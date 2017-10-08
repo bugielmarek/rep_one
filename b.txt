@@ -1,2 +1,3 @@
 This is completly new file, which will soon be used to test doing modifications to files.
-This line is added after b.txt file was created, then staged, and later on commited and pushed to GitHub. 
+This (JUST CHECKING) line is added after b.txt file was created, then staged, and later on commited and pushed to GitHub. 
+Yet another new line to see how to work with Index Editor in SmartGit.
