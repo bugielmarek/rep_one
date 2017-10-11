@@ -41,12 +41,12 @@
 				</ul></td>
 			<td>
 				<ul class="sygList">
-					<li><sf:radiobutton path="payment.caseType" value="KM_"
+					<li><sf:radiobutton path="payment.caseType" value="KM"
 							checked="checked" />
 						<div class="km">KM</div></li>
-					<li><sf:radiobutton path="payment.caseType" value="KMS_" />
+					<li><sf:radiobutton path="payment.caseType" value="KMS" />
 						<div class="kms">KMS</div></li>
-					<li><sf:radiobutton path="payment.caseType" value="KMP_" />
+					<li><sf:radiobutton path="payment.caseType" value="KMP" />
 						<div class="kmp">KMP</div></li>
 				</ul>
 			</td>
@@ -128,12 +128,12 @@
 				</ul></td>
 			<td>
 				<ul class="sygList">
-					<li><sf:radiobutton path="issue.caseType" value="KM "
+					<li><sf:radiobutton path="issue.caseType" value="KM"
 							checked="checked" />
 						<div class="km">KM</div></li>
-					<li><sf:radiobutton path="issue.caseType" value="KMS " />
+					<li><sf:radiobutton path="issue.caseType" value="KMS" />
 						<div class="kms">KMS</div></li>
-					<li><sf:radiobutton path="issue.caseType" value="KMP " />
+					<li><sf:radiobutton path="issue.caseType" value="KMP" />
 						<div class="kmp">KMP</div></li>
 				</ul>
 			</td>
