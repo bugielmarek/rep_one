@@ -101,12 +101,13 @@ public class UserControllerTest {
 		mockMvc = standaloneSetup(controller)
 				.build();
 		User unsaved = new User.UserBuilder()
-				.username("someName")
+				.username("nameee")
 				.password("somePassword")
+				.formPassword("somePassword")
 				.build();
 		User saved = new User.UserBuilder()
 			.id(1L)
-			.username("someName")
+			.username("namee")
 			.password("someEncryptedPassword")
 			.build();
 		when(mockService.exists(unsaved.getUsername())).thenReturn(false);
@@ -114,7 +115,8 @@ public class UserControllerTest {
 
 		mockMvc.perform(post("/users/createuser")
 				.param("username", unsaved.getUsername())
-				.param("password", unsaved.getPassword()))
+				.param("password", unsaved.getPassword())
+				.param("formPassword", unsaved.getFormPassword()))
 				.andExpect(status().is3xxRedirection())
 				.andExpect(redirectedUrl("/users/user/1"))
 				.andExpect(model().attributeExists("id"))
@@ -143,7 +145,7 @@ public class UserControllerTest {
 		when(mockService.exists(unsaved.getUsername())).thenReturn(true);
 
 		mockMvc.perform(
-				post("/user/createuser")
+				post("/users/createuser")
 				.param("username", unsaved.getUsername())
 				.param("password", unsaved.getPassword())
 				.param("formPassword", unsaved.getFormPassword()))
@@ -159,7 +161,7 @@ public class UserControllerTest {
 	}
 
 	@Test
-	public void testCreateUserPOST_FieldErrors_Username_Password() throws Exception {
+	public void testCreateUserPOST_FieldErrors_Username_Password_FormPassword() throws Exception {
 		
 		mockMvc = standaloneSetup(controller)
 				.setSingleView(view)
@@ -167,8 +169,9 @@ public class UserControllerTest {
 		User unsaved = new User.UserBuilder()
 				.username(TestUtils.createStringWithLength(7))
 				.password(TestUtils.createStringWithLength(16))
-				.formPassword(TestUtils.createStringWithLength(1))
+				.formPassword(TestUtils.createStringWithLength(16))
 				.build();
+		
 		mockMvc.perform(post("/users/createuser")
 				.param("username", unsaved.getUsername())
 				.param("password", unsaved.getPassword())
@@ -179,7 +182,8 @@ public class UserControllerTest {
 				.andExpect(model().attributeHasFieldErrors(USER, "username"))
 				.andExpect(model().attributeHasFieldErrors(USER, "password"))
 				.andExpect(model().attributeHasFieldErrors(USER, "formPassword"))
-				.andExpect(model().errorCount(3))
+				.andExpect(model().errorCount(4))
+				// Both pattern and size constraint violated for username field, thus 4 errors
 				;
 		verifyZeroInteractions(mockService);
 	}
