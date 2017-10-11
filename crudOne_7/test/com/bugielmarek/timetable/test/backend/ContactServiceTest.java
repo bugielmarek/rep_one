@@ -28,7 +28,6 @@ import com.bugielmarek.timetable.model.Contact;
 import com.bugielmarek.timetable.model.FormClass;
 import com.bugielmarek.timetable.services.ContactService;
 
-//@ActiveProfiles("apacheCommonsDbcp")
 @ActiveProfiles("embeddedH2")
 @ContextConfiguration(locations = { "classpath:com/bugielmarek/timetable/config/testConfig.xml",
 		"classpath:com/bugielmarek/timetable/config/rootAppContext.xml",
@@ -43,7 +42,6 @@ public class ContactServiceTest {
 		return this.jdbc = new JdbcTemplate(dataSource);
 	}
 
-	// private static final String DELETE_CONTACTS = "delete from contacts";
 	private static final String CREATE = "com/bugielmarek/timetable/scripts/createContactsTable.sql";
 	private static final String DROP = "com/bugielmarek/timetable/scripts/dropContactsTable.sql";
 
@@ -56,11 +54,6 @@ public class ContactServiceTest {
 	public void after() throws ScriptException, SQLException {
 		ScriptUtils.executeSqlScript(jdbc.getDataSource().getConnection(), new ClassPathResource(DROP));
 	}
-
-	/*
-	 * @Before public void setUp(){ System.out.println(jdbc);
-	 * jdbc.execute(DELETE_CONTACTS); }
-	 */
 
 	@Autowired
 	ContactService contactService;
@@ -90,7 +83,7 @@ public class ContactServiceTest {
 	}
 	
 	@Test
-	public void testFindOne() {
+	public void testFindOne_Found() {
 			Contact contact = new Contact.ContactBuilder()
 					.name("kontakt")
 					.build();
@@ -100,6 +93,14 @@ public class ContactServiceTest {
 		assertEquals("Saved contact should have id=1", new Long(1L), retrived.getId());
 		assertEquals("Contact objs should be the same", contact, retrived);
 	}
+	
+	@Test
+	public void testFindOne_NotFound() {
+		assertEquals(0, JdbcTestUtils.countRowsInTable(jdbc, "contacts"));
+		assertEquals("Contact objs should be the same", null, contactService.findOne(1L));
+	}
+	
+	
 	
 	@Test
 	public void testDelete() {
@@ -146,7 +147,7 @@ public class ContactServiceTest {
 			List<Contact> sortableResult = new ArrayList<>(contactService.findPageByName(searchInput, 1).getContent());
 			sortableResult.sort(Comparator.comparing(Contact::getId));
 		assertEquals("There should be only 3 contacts machting search input", 3, contactService.findPageByName(searchInput, 1).getContent().size());
-		assertEquals("Search result should be equal to matching made List", matchingContacts, sortableResult);
+		assertEquals("Custom matching list should be equal to retrived one", matchingContacts, sortableResult);
 	}
 	
 	@Test
