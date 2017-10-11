@@ -68,6 +68,9 @@ public class PaymentServiceImpl implements PaymentService {
 
 	public Payment findOne(long paymentId) {
 		Payment payment = dao.findOne(paymentId);
+		if(payment == null){
+			return null;
+		}
 		payment.setDate(payment.getDeadline().toString());
 		return payment;
 	}
@@ -93,18 +96,18 @@ public class PaymentServiceImpl implements PaymentService {
 
 		// if both fields are empty user is not going back to searchForm so false
 		if (isNameEmpty && isSygNumberEmpty) {
-			return false;
+			return true;
 		}
 		
 		// sygNumber was provided, check if it matches records in DB
 		if (isNameEmpty && !isSygNumberEmpty) {
 			Page<Payment> page = findPageByCaseTypeSygNumber(caseType, sygNumber, pageNumber);
-			return !page.hasContent();
+			return page.hasContent();
 		}
 		// name was provided, check if it matches records in DB
 		if (!isNameEmpty && isSygNumberEmpty) {
 			Page<Payment> page = findPageByName(name, pageNumber);
-			return !page.hasContent();
+			return page.hasContent();
 		}
 		// both fields were provided, check if they match records in DB
 		Page<Payment> page = findPageByNameCaseTypeSygNumber(name, caseType, sygNumber, pageNumber);
