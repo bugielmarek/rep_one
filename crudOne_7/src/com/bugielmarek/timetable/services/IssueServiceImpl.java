@@ -86,17 +86,17 @@ public class IssueServiceImpl implements IssueService {
 		// if both fields are empty user is not going back to searchForm so
 		// false
 		if (isNameEmpty && isSygNumberEmpty) {
-			return false;
+			return true;
 		}
 		// sygNumber was provided, check if it matches records in DB
 		if (isNameEmpty && !isSygNumberEmpty) {
 			Page<Issue> page = findPageByCaseTypeSygNumber(caseType, sygNumber, pageNumber);
-			return !page.hasContent();
+			return page.hasContent();
 		}
 		// name was provided, check if it matches records in DB
 		if (!isNameEmpty && isSygNumberEmpty) {
 			Page<Issue> page = findPageByName(name, pageNumber);
-			return !page.hasContent();
+			return page.hasContent();
 		}
 		// both fields were provided, check if they match records in DB
 		Page<Issue> page = findPageByNameCaseTypeSygNumber(name, caseType, sygNumber, pageNumber);
