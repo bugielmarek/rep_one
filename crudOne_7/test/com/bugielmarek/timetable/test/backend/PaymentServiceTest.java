@@ -57,13 +57,13 @@ public class PaymentServiceTest {
 	@WithMockUser
 	public void testGetPage() {
 		
-				Payment payment1 = new Payment.PaymentBuilder()
+				Payment payment1 = Payment.builder()
 						.name("someName")
 						.caseType(CaseType.KM)
 						.sygNumber("1967/16")
 						.date("2017-08-14")
 						.build();
-				Payment payment2 = new Payment.PaymentBuilder()
+				Payment payment2 = Payment.builder()
 						.name("someName")
 						.caseType(CaseType.KM)
 						.sygNumber("1967/16")
@@ -79,19 +79,19 @@ public class PaymentServiceTest {
 	@WithMockUser
 	public void testFindPageByName_ResultsFound() {
 		
-				Payment payment1 = new Payment.PaymentBuilder()
+				Payment payment1 = Payment.builder()
 						.name("desiredName")
 						.caseType(CaseType.KM)
 						.sygNumber("1967/16")
 						.date("2017-08-14")
 						.build();
-				Payment payment2 = new Payment.PaymentBuilder()
+				Payment payment2 = Payment.builder()
 						.name("xDESIREDNAMEx")
 						.caseType(CaseType.KM)
 						.sygNumber("1967/16")
 						.date("2017-08-14")
 						.build();
-				Payment payment3 = new Payment.PaymentBuilder()
+				Payment payment3 = Payment.builder()
 						.name("someOtherName")
 						.caseType(CaseType.KM)
 						.sygNumber("1967/16")
@@ -112,19 +112,19 @@ public class PaymentServiceTest {
 	@WithMockUser
 	public void testFindPageByName_NoResults() {
 		
-				Payment payment1 = new Payment.PaymentBuilder()
+				Payment payment1 = Payment.builder()
 						.name("someName")
 						.caseType(CaseType.KM)
 						.sygNumber("1967/16")
 						.date("2017-08-14")
 						.build();
-				Payment payment2 = new Payment.PaymentBuilder()
+				Payment payment2 = Payment.builder()
 						.name("someOtherName")
 						.caseType(CaseType.KM)
 						.sygNumber("1967/16")
 						.date("2017-08-14")
 						.build();
-				Payment payment3 = new Payment.PaymentBuilder()
+				Payment payment3 = Payment.builder()
 						.name("yetAnotherName")
 						.caseType(CaseType.KM)
 						.sygNumber("1967/16")
@@ -142,37 +142,37 @@ public class PaymentServiceTest {
 	@WithMockUser
 	public void testFindPageByCaseTypeSygNumber_ResultsFound() {
 		
-				Payment payment1 = new Payment.PaymentBuilder()
+				Payment payment1 = Payment.builder()
 						.name("someName")
 						.caseType(CaseType.KM)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment2 = new Payment.PaymentBuilder()
+				Payment payment2 = Payment.builder()
 						.name("someOtherName")
 						.caseType(CaseType.KMS)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment3 = new Payment.PaymentBuilder()
+				Payment payment3 = Payment.builder()
 						.name("yetAnotherName")
 						.caseType(CaseType.KMP)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment4 = new Payment.PaymentBuilder()
+				Payment payment4 = Payment.builder()
 						.name("someName")
 						.caseType(CaseType.KM)
 						.sygNumber("1111/12")
 						.date("2017-08-14")
 						.build();
-				Payment payment5 = new Payment.PaymentBuilder()
+				Payment payment5 = Payment.builder()
 						.name("someOtherName")
 						.caseType(CaseType.KMS)
 						.sygNumber("1111/22")
 						.date("2017-08-14")
 						.build();
-				Payment payment6 = new Payment.PaymentBuilder()
+				Payment payment6 = Payment.builder()
 						.name("someName")
 						.caseType(CaseType.KM)
 						.sygNumber("1111/11")
@@ -197,25 +197,25 @@ public class PaymentServiceTest {
 	@WithMockUser
 	public void testFindPageByCaseTypeSygNumber_NoResults() {
 		
-				Payment payment1 = new Payment.PaymentBuilder()
+				Payment payment1 = Payment.builder()
 						.name("someName")
 						.caseType(CaseType.KM)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment2 = new Payment.PaymentBuilder()
+				Payment payment2 = Payment.builder()
 						.name("someOtherName")
 						.caseType(CaseType.KMS)
 						.sygNumber("2222/22")
 						.date("2017-08-14")
 						.build();
-				Payment payment3 = new Payment.PaymentBuilder()
+				Payment payment3 = Payment.builder()
 						.name("yetAnotherName")
 						.caseType(CaseType.KMP)
 						.sygNumber("2222/22")
 						.date("2017-08-14")
 						.build();
-				Payment payment4 = new Payment.PaymentBuilder()
+				Payment payment4 = Payment.builder()
 						.name("someName")
 						.caseType(CaseType.KM)
 						.sygNumber("2222/12")
@@ -235,61 +235,61 @@ public class PaymentServiceTest {
 	@WithMockUser
 	public void testFindPageByNameCaseTypeSygNumber_ResultsFound() {
 		
-				Payment payment1 = new Payment.PaymentBuilder()
+				Payment payment1 = Payment.builder()
 						.name("desiredName")
 						.caseType(CaseType.KM)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment2 = new Payment.PaymentBuilder()
+				Payment payment2 = Payment.builder()
 						.name("xDESIREDNAMEx")
 						.caseType(CaseType.KM)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment3 = new Payment.PaymentBuilder()
+				Payment payment3 = Payment.builder()
 						.name("notWantedName")
 						.caseType(CaseType.KM)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment4 = new Payment.PaymentBuilder()
+				Payment payment4 = Payment.builder()
 						.name("desiredName")
 						.caseType(CaseType.KMS)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment5 = new Payment.PaymentBuilder()
+				Payment payment5 = Payment.builder()
 						.name("xDESIREDNAMEx")
 						.caseType(CaseType.KMS)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment6 = new Payment.PaymentBuilder()
+				Payment payment6 = Payment.builder()
 						.name("notWantedName")
 						.caseType(CaseType.KMS)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment7 = new Payment.PaymentBuilder()
+				Payment payment7 = Payment.builder()
 						.name("desiredName")
 						.caseType(CaseType.KMP)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment8 = new Payment.PaymentBuilder()
+				Payment payment8 = Payment.builder()
 						.name("xDESIREDNAMEx")
 						.caseType(CaseType.KMP)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment9 = new Payment.PaymentBuilder()
+				Payment payment9 = Payment.builder()
 						.name("notWantedName")
 						.caseType(CaseType.KMP)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment10 = new Payment.PaymentBuilder()
+				Payment payment10 = Payment.builder()
 						.name("desiredName")
 						.caseType(CaseType.KM)
 						.sygNumber("2222/22")
@@ -318,61 +318,61 @@ public class PaymentServiceTest {
 	@WithMockUser
 	public void testFindPageByNameCaseTypeSygNumber_NoResults() {
 		
-				Payment payment1 = new Payment.PaymentBuilder()
+				Payment payment1 = Payment.builder()
 						.name("desiredName")
 						.caseType(CaseType.KM)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment2 = new Payment.PaymentBuilder()
+				Payment payment2 = Payment.builder()
 						.name("xDESIREDNAMEx")
 						.caseType(CaseType.KM)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment3 = new Payment.PaymentBuilder()
+				Payment payment3 = Payment.builder()
 						.name("notWantedName")
 						.caseType(CaseType.KM)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment4 = new Payment.PaymentBuilder()
+				Payment payment4 = Payment.builder()
 						.name("desiredName")
 						.caseType(CaseType.KMS)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment5 = new Payment.PaymentBuilder()
+				Payment payment5 = Payment.builder()
 						.name("xDESIREDNAMEx")
 						.caseType(CaseType.KMS)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment6 = new Payment.PaymentBuilder()
+				Payment payment6 = Payment.builder()
 						.name("notWantedName")
 						.caseType(CaseType.KMS)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment7 = new Payment.PaymentBuilder()
+				Payment payment7 = Payment.builder()
 						.name("desiredName")
 						.caseType(CaseType.KMP)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment8 = new Payment.PaymentBuilder()
+				Payment payment8 = Payment.builder()
 						.name("xDESIREDNAMEx")
 						.caseType(CaseType.KMP)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment9 = new Payment.PaymentBuilder()
+				Payment payment9 = Payment.builder()
 						.name("notWantedName")
 						.caseType(CaseType.KMP)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment10 = new Payment.PaymentBuilder()
+				Payment payment10 = Payment.builder()
 						.name("desiredName")
 						.caseType(CaseType.KM)
 						.sygNumber("2222/22")
@@ -401,31 +401,31 @@ public class PaymentServiceTest {
 	@WithMockUser
 	public void testFindByCaseTypeSygNumber_ResultsFound() {
 			
-				Payment payment1 = new Payment.PaymentBuilder()
+				Payment payment1 = Payment.builder()
 						.name("someName")
 						.caseType(CaseType.KM)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment2 = new Payment.PaymentBuilder()
+				Payment payment2 = Payment.builder()
 						.name("someOtherName")
 						.caseType(CaseType.KMS)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment3 = new Payment.PaymentBuilder()
+				Payment payment3 = Payment.builder()
 						.name("yetAnotherName")
 						.caseType(CaseType.KMP)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment4 = new Payment.PaymentBuilder()
+				Payment payment4 = Payment.builder()
 						.name("someName")
 						.caseType(CaseType.KM)
 						.sygNumber("1111/12")
 						.date("2017-08-14")
 						.build();
-				Payment payment5 = new Payment.PaymentBuilder()
+				Payment payment5 = Payment.builder()
 						.name("someOtherName")
 						.caseType(CaseType.KMS)
 						.sygNumber("1111/22")
@@ -446,7 +446,7 @@ public class PaymentServiceTest {
 	@WithMockUser
 	public void testSavePayment() {
 
-				Payment payment = new Payment.PaymentBuilder()
+				Payment payment = Payment.builder()
 						.name("someName")
 						.caseType(CaseType.KM)
 						.sygNumber("1967/16")
@@ -461,7 +461,7 @@ public class PaymentServiceTest {
 	@WithMockUser
 	public void testDeletePayment() {
 
-				Payment payment = new Payment.PaymentBuilder()
+				Payment payment = Payment.builder()
 						.name("someName")
 						.caseType(CaseType.KM)
 						.sygNumber("1967/16")
@@ -478,13 +478,13 @@ public class PaymentServiceTest {
 	@WithMockUser
 	public void testExistsPayment_CaseType_SygNumber_Id_ReturnsTrue() {
 
-				Payment payment1 = new Payment.PaymentBuilder()
+				Payment payment1 = Payment.builder()
 						.name("someName")
 						.caseType(CaseType.KM)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment2 = new Payment.PaymentBuilder()
+				Payment payment2 = Payment.builder()
 						.name("someName")
 						.caseType(CaseType.KM)
 						.sygNumber("1111/11")
@@ -501,25 +501,25 @@ public class PaymentServiceTest {
 	@WithMockUser
 	public void testExistsPayment_CaseType_SygNumber_Id_ReturnsFalse() {
 
-				Payment payment1 = new Payment.PaymentBuilder()
+				Payment payment1 = Payment.builder()
 						.name("someName")
 						.caseType(CaseType.KM)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment2 = new Payment.PaymentBuilder()
+				Payment payment2 = Payment.builder()
 						.name("someName")
 						.caseType(CaseType.KM)
 						.sygNumber("2222/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment3 = new Payment.PaymentBuilder()
+				Payment payment3 = Payment.builder()
 						.name("someName")
 						.caseType(CaseType.KMS)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment4 = new Payment.PaymentBuilder()
+				Payment payment4 = Payment.builder()
 						.name("someName")
 						.caseType(CaseType.KMP)
 						.sygNumber("1111/11")
@@ -538,13 +538,13 @@ public class PaymentServiceTest {
 	@WithMockUser
 	public void testExistsPayment_CaseType_SygNumber_ReturnsTrue() {
 
-				Payment payment1 = new Payment.PaymentBuilder()
+				Payment payment1 = Payment.builder()
 						.name("someName")
 						.caseType(CaseType.KM)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment2 = new Payment.PaymentBuilder()
+				Payment payment2 = Payment.builder()
 						.name("someName")
 						.caseType(CaseType.KM)
 						.sygNumber("1111/11")
@@ -561,19 +561,19 @@ public class PaymentServiceTest {
 	@WithMockUser
 	public void testExistsPayment_CaseType_SygNumber_ReturnsFalse() {
 
-				Payment payment1 = new Payment.PaymentBuilder()
+				Payment payment1 = Payment.builder()
 						.name("someName")
 						.caseType(CaseType.KMS)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment2 = new Payment.PaymentBuilder()
+				Payment payment2 = Payment.builder()
 						.name("someName")
 						.caseType(CaseType.KMP)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment3 = new Payment.PaymentBuilder()
+				Payment payment3 = Payment.builder()
 						.name("someName")
 						.caseType(CaseType.KM)
 						.sygNumber("2111/11")
@@ -594,7 +594,7 @@ public class PaymentServiceTest {
 	@WithMockUser
 	public void testFindOne_PaymentFound() {
 
-				Payment payment = new Payment.PaymentBuilder()
+				Payment payment = Payment.builder()
 						.name("someName")
 						.caseType(CaseType.KMS)
 						.sygNumber("1111/11")
@@ -611,7 +611,7 @@ public class PaymentServiceTest {
 	@WithMockUser
 	public void testFindOne_NotFound() {
 
-				Payment payment = new Payment.PaymentBuilder()
+				Payment payment = Payment.builder()
 						.name("someName")
 						.caseType(CaseType.KMS)
 						.sygNumber("1111/11")
@@ -628,7 +628,7 @@ public class PaymentServiceTest {
 	@Test
 	public void testSearchInputHasResult_ReturnsTrue_Name_SygNumber_BothFieldsEmpty() {
 
-				Payment payment = new Payment.PaymentBuilder()
+				Payment payment = Payment.builder()
 						.name("")
 						.caseType(CaseType.KMS)
 						.sygNumber("")
@@ -642,32 +642,32 @@ public class PaymentServiceTest {
 	@WithMockUser
 	public void testSearchInputHasResult_ReturnsTrue_SygNumberAndCaseTypeEntered() {
 
-				Payment payment = new Payment.PaymentBuilder()
+				Payment payment = Payment.builder()
 						.name("")
 						.caseType(CaseType.KMS)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
 				FormClass formClass = new FormClass(payment);
-				Payment payment1 = new Payment.PaymentBuilder()
+				Payment payment1 = Payment.builder()
 						.name("someName")
 						.caseType(CaseType.KMS)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment2 = new Payment.PaymentBuilder()
+				Payment payment2 = Payment.builder()
 						.name("someName")
 						.caseType(CaseType.KMS)
 						.sygNumber("2111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment3 = new Payment.PaymentBuilder()
+				Payment payment3 = Payment.builder()
 						.name("someName")
 						.caseType(CaseType.KM)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment4 = new Payment.PaymentBuilder()
+				Payment payment4 = Payment.builder()
 						.name("someName")
 						.caseType(CaseType.KMP)
 						.sygNumber("1111/11")
@@ -686,32 +686,32 @@ public class PaymentServiceTest {
 	@WithMockUser
 	public void testSearchInputHasResult_ReturnsTrue_NameEntered() {
 
-				Payment payment = new Payment.PaymentBuilder()
+				Payment payment = Payment.builder()
 						.name("sir")
 						.caseType(CaseType.KMS)
 						.sygNumber("")
 						.date("2017-08-14")
 						.build();
 				FormClass formClass = new FormClass(payment);
-				Payment payment1 = new Payment.PaymentBuilder()
+				Payment payment1 = Payment.builder()
 						.name("desiredName")
 						.caseType(CaseType.KMS)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment2 = new Payment.PaymentBuilder()
+				Payment payment2 = Payment.builder()
 						.name("xDESIREDNAMEx")
 						.caseType(CaseType.KMS)
 						.sygNumber("2111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment3 = new Payment.PaymentBuilder()
+				Payment payment3 = Payment.builder()
 						.name("someName")
 						.caseType(CaseType.KM)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment4 = new Payment.PaymentBuilder()
+				Payment payment4 = Payment.builder()
 						.name("someOtherName")
 						.caseType(CaseType.KMP)
 						.sygNumber("1111/11")
@@ -730,26 +730,26 @@ public class PaymentServiceTest {
 	@WithMockUser
 	public void testSearchInputHasResult_ReturnsTrue_AllFieldsEntered() {
 
-				Payment payment = new Payment.PaymentBuilder()
+				Payment payment = Payment.builder()
 						.name("sir")
 						.caseType(CaseType.KMS)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
 				FormClass formClass = new FormClass(payment);
-				Payment payment1 = new Payment.PaymentBuilder()
+				Payment payment1 = Payment.builder()
 						.name("desiredName")
 						.caseType(CaseType.KMS)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment2 = new Payment.PaymentBuilder()
+				Payment payment2 = Payment.builder()
 						.name("xDESIREDNAMEx")
 						.caseType(CaseType.KMS)
 						.sygNumber("2111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment3 = new Payment.PaymentBuilder()
+				Payment payment3 = Payment.builder()
 						.name("someName")
 						.caseType(CaseType.KM)
 						.sygNumber("1111/11")
@@ -768,26 +768,26 @@ public class PaymentServiceTest {
 	@WithMockUser
 	public void testGetPageResultFromSearchInput_BothFieldsEmpty() {
 
-				Payment payment = new Payment.PaymentBuilder()
+				Payment payment = Payment.builder()
 						.name("")
 						.caseType(CaseType.KMS)
 						.sygNumber("")
 						.date("2017-08-14")
 						.build();
 				FormClass formClass = new FormClass(payment);
-				Payment payment1 = new Payment.PaymentBuilder()
+				Payment payment1 = Payment.builder()
 						.name("name")
 						.caseType(CaseType.KMS)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment2 = new Payment.PaymentBuilder()
+				Payment payment2 = Payment.builder()
 						.name("someName")
 						.caseType(CaseType.KMP)
 						.sygNumber("6666/66")
 						.date("2017-08-14")
 						.build();
-				Payment payment3 = new Payment.PaymentBuilder()
+				Payment payment3 = Payment.builder()
 						.name("someOtherName")
 						.caseType(CaseType.KM)
 						.sygNumber("9999/15")
@@ -808,26 +808,26 @@ public class PaymentServiceTest {
 	@WithMockUser
 	public void testGetPageResultFromSearchInput_NameEntered() {
 
-				Payment payment = new Payment.PaymentBuilder()
+				Payment payment = Payment.builder()
 						.name("sir")
 						.caseType(CaseType.KMS)
 						.sygNumber("")
 						.date("2017-08-14")
 						.build();
 				FormClass formClass = new FormClass(payment);
-				Payment payment1 = new Payment.PaymentBuilder()
+				Payment payment1 = Payment.builder()
 						.name("desiredName")
 						.caseType(CaseType.KMS)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment2 = new Payment.PaymentBuilder()
+				Payment payment2 = Payment.builder()
 						.name("xDESIREDNAMEx")
 						.caseType(CaseType.KMP)
 						.sygNumber("6666/66")
 						.date("2017-08-14")
 						.build();
-				Payment payment3 = new Payment.PaymentBuilder()
+				Payment payment3 = Payment.builder()
 						.name("someOtherName")
 						.caseType(CaseType.KM)
 						.sygNumber("9999/15")
@@ -848,32 +848,32 @@ public class PaymentServiceTest {
 	@WithMockUser
 	public void testGetPageResultFromSearchInput_SygNumberCaseTypeEntered() {
 
-				Payment payment = new Payment.PaymentBuilder()
+				Payment payment = Payment.builder()
 						.name("")
 						.caseType(CaseType.KMS)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
 				FormClass formClass = new FormClass(payment);
-				Payment payment1 = new Payment.PaymentBuilder()
+				Payment payment1 = Payment.builder()
 						.name("desiredName")
 						.caseType(CaseType.KMS)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment2 = new Payment.PaymentBuilder()
+				Payment payment2 = Payment.builder()
 						.name("xDESIREDNAMEx")
 						.caseType(CaseType.KMP)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment3 = new Payment.PaymentBuilder()
+				Payment payment3 = Payment.builder()
 						.name("someOtherName")
 						.caseType(CaseType.KM)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment4 = new Payment.PaymentBuilder()
+				Payment payment4 = Payment.builder()
 						.name("desiredName")
 						.caseType(CaseType.KMS)
 						.sygNumber("2222/22")
@@ -895,32 +895,32 @@ public class PaymentServiceTest {
 	@WithMockUser
 	public void testGetPageResultFromSearchInput_AllFieldsEntered() {
 
-				Payment payment = new Payment.PaymentBuilder()
+				Payment payment = Payment.builder()
 						.name("sir")
 						.caseType(CaseType.KMS)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
 				FormClass formClass = new FormClass(payment);
-				Payment payment1 = new Payment.PaymentBuilder()
+				Payment payment1 = Payment.builder()
 						.name("desiredName")
 						.caseType(CaseType.KMS)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment2 = new Payment.PaymentBuilder()
+				Payment payment2 = Payment.builder()
 						.name("xDESIREDNAMEx")
 						.caseType(CaseType.KMP)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment3 = new Payment.PaymentBuilder()
+				Payment payment3 = Payment.builder()
 						.name("DESIREDNAME")
 						.caseType(CaseType.KM)
 						.sygNumber("1111/11")
 						.date("2017-08-14")
 						.build();
-				Payment payment4 = new Payment.PaymentBuilder()
+				Payment payment4 = Payment.builder()
 						.name("desiredName")
 						.caseType(CaseType.KMS)
 						.sygNumber("2222/22")

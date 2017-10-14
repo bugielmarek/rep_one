@@ -60,10 +60,10 @@ public class ContactServiceTest {
 	
 	@Test
 	public void testGetPage() {
-			Contact contact1 = new Contact.ContactBuilder()
+			Contact contact1 = Contact.builder()
 					.name("kontakt1")
 					.build();
-			Contact contact2 = new Contact.ContactBuilder()
+			Contact contact2 = Contact.builder()
 					.name("kontakt2")
 					.build();
 		assertEquals("No contacts in DB", 0, contactService.getPage(1).getContent().size());
@@ -74,7 +74,7 @@ public class ContactServiceTest {
 
 	@Test
 	public void testSave() {
-			Contact contact = new Contact.ContactBuilder()
+			Contact contact = Contact.builder()
 					.name("kontakt")
 					.build();
 		assertEquals(0, JdbcTestUtils.countRowsInTableWhere(jdbc, "contacts", "name = '" + contact.getName() + "'"));
@@ -84,7 +84,7 @@ public class ContactServiceTest {
 	
 	@Test
 	public void testFindOne_Found() {
-			Contact contact = new Contact.ContactBuilder()
+			Contact contact = Contact.builder()
 					.name("kontakt")
 					.build();
 		assertEquals("Not yet saved contact should have id=null", null, contact.getId());
@@ -104,7 +104,7 @@ public class ContactServiceTest {
 	
 	@Test
 	public void testDelete() {
-			Contact contact = new Contact.ContactBuilder()
+			Contact contact = Contact.builder()
 					.name("kontakt")
 					.build();
 			contactService.save(contact);
@@ -115,22 +115,22 @@ public class ContactServiceTest {
 	
 	@Test
 	public void testGetPageByName_ResultsFound() {
-			Contact contact1 = new Contact.ContactBuilder()
+			Contact contact1 = Contact.builder()
 					.name("contactWithDesiredName")
 					.build();
-			Contact contact2 = new Contact.ContactBuilder()
+			Contact contact2 = Contact.builder()
 					.firstName("CONTACTWITHDESIREDNAME")
 					.build();
-			Contact contact3 = new Contact.ContactBuilder()
+			Contact contact3 = Contact.builder()
 					.lastName("mSiRm")
 					.build();
-			Contact contact4 = new Contact.ContactBuilder()
+			Contact contact4 = Contact.builder()
 					.name("aaa")
 					.build();
-			Contact contact5 = new Contact.ContactBuilder()
+			Contact contact5 = Contact.builder()
 					.firstName("bbb")
 					.build();
-			Contact contact6 = new Contact.ContactBuilder()
+			Contact contact6 = Contact.builder()
 					.lastName("ccc")
 					.build();
 			String searchInput = "sir";
@@ -152,13 +152,13 @@ public class ContactServiceTest {
 	
 	@Test
 	public void testGetPageByName_NoResultsFound() {
-			Contact contact1 = new Contact.ContactBuilder()
+			Contact contact1 = Contact.builder()
 					.name("contactWithDesiredName")
 					.build();
-			Contact contact2 = new Contact.ContactBuilder()
+			Contact contact2 = Contact.builder()
 					.firstName("CONTACTWITHDESIREDNAME")
 					.build();
-			Contact contact3 = new Contact.ContactBuilder()
+			Contact contact3 = Contact.builder()
 					.lastName("mSiRm")
 					.build();
 			String searchInput = "xxx";
@@ -173,25 +173,25 @@ public class ContactServiceTest {
 	
 	@Test
 	public void testSearchInputHasResult_ResultsFound() {
-			Contact contact1 = new Contact.ContactBuilder()
+			Contact contact1 = Contact.builder()
 					.name("contactWithDesiredName")
 					.build();
-			Contact contact2 = new Contact.ContactBuilder()
+			Contact contact2 = Contact.builder()
 					.firstName("CONTACTWITHDESIREDNAME")
 					.build();
-			Contact contact3 = new Contact.ContactBuilder()
+			Contact contact3 = Contact.builder()
 					.lastName("mSiRm")
 					.build();
-			Contact contact4 = new Contact.ContactBuilder()
+			Contact contact4 = Contact.builder()
 					.name("aaa")
 					.build();
-			Contact contact5 = new Contact.ContactBuilder()
+			Contact contact5 = Contact.builder()
 					.firstName("bbb")
 					.build();
-			Contact contact6 = new Contact.ContactBuilder()
+			Contact contact6 = Contact.builder()
 					.lastName("ccc")
 					.build();
-			Contact formContact = new Contact.ContactBuilder()
+			Contact formContact = Contact.builder()
 					.name("sir")
 					.build();
 			FormClass formClass = new FormClass(formContact);
@@ -209,25 +209,25 @@ public class ContactServiceTest {
 	
 	@Test
 	public void testSearchInputHasResult_NoResultsFound() {
-			Contact contact1 = new Contact.ContactBuilder()
+			Contact contact1 = Contact.builder()
 					.name("contactWithDesiredName")
 					.build();
-			Contact contact2 = new Contact.ContactBuilder()
+			Contact contact2 = Contact.builder()
 					.firstName("CONTACTWITHDESIREDNAME")
 					.build();
-			Contact contact3 = new Contact.ContactBuilder()
+			Contact contact3 = Contact.builder()
 					.lastName("mSiRm")
 					.build();
-			Contact contact4 = new Contact.ContactBuilder()
+			Contact contact4 = Contact.builder()
 					.name("aaa")
 					.build();
-			Contact contact5 = new Contact.ContactBuilder()
+			Contact contact5 = Contact.builder()
 					.firstName("bbb")
 					.build();
-			Contact contact6 = new Contact.ContactBuilder()
+			Contact contact6 = Contact.builder()
 					.lastName("ccc")
 					.build();
-			Contact formContact = new Contact.ContactBuilder()
+			Contact formContact = Contact.builder()
 					.name("xxx")
 					.build();
 			FormClass formClass = new FormClass(formContact);
@@ -245,25 +245,25 @@ public class ContactServiceTest {
 	
 	@Test
 	public void testGetPageResultFromSearchInput_ResultsFound_EmptyInputPassed() {
-			Contact contact1 = new Contact.ContactBuilder()
+			Contact contact1 = Contact.builder()
 					.name("contactWithDesiredName")
 					.build();
-			Contact contact2 = new Contact.ContactBuilder()
+			Contact contact2 = Contact.builder()
 					.firstName("CONTACTWITHDESIREDNAME")
 					.build();
-			Contact contact3 = new Contact.ContactBuilder()
+			Contact contact3 = Contact.builder()
 					.lastName("mSiRm")
 					.build();
-			Contact contact4 = new Contact.ContactBuilder()
+			Contact contact4 = Contact.builder()
 					.name("aaa")
 					.build();
-			Contact contact5 = new Contact.ContactBuilder()
+			Contact contact5 = Contact.builder()
 					.firstName("bbb")
 					.build();
-			Contact contact6 = new Contact.ContactBuilder()
+			Contact contact6 = Contact.builder()
 					.lastName("ccc")
 					.build();
-			Contact formContact = new Contact.ContactBuilder()
+			Contact formContact = Contact.builder()
 					.name("")
 					.build();
 			FormClass formClass = new FormClass(formContact);
@@ -285,25 +285,25 @@ public class ContactServiceTest {
 	
 	@Test
 	public void testGetPageResultFromSearchInput_ResultsFound_NonEmptyInputPassed() {
-			Contact contact1 = new Contact.ContactBuilder()
+			Contact contact1 = Contact.builder()
 					.name("contactWithDesiredName")
 					.build();
-			Contact contact2 = new Contact.ContactBuilder()
+			Contact contact2 = Contact.builder()
 					.firstName("CONTACTWITHDESIREDNAME")
 					.build();
-			Contact contact3 = new Contact.ContactBuilder()
+			Contact contact3 = Contact.builder()
 					.lastName("mSiRm")
 					.build();
-			Contact contact4 = new Contact.ContactBuilder()
+			Contact contact4 = Contact.builder()
 					.name("aaa")
 					.build();
-			Contact contact5 = new Contact.ContactBuilder()
+			Contact contact5 = Contact.builder()
 					.firstName("bbb")
 					.build();
-			Contact contact6 = new Contact.ContactBuilder()
+			Contact contact6 = Contact.builder()
 					.lastName("ccc")
 					.build();
-			Contact formContact = new Contact.ContactBuilder()
+			Contact formContact = Contact.builder()
 					.name("SIR")
 					.build();
 			FormClass formClass = new FormClass(formContact);
