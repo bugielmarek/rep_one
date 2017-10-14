@@ -6,7 +6,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class TestUtils {
 
-	 
 	 public static String createStringWithLength(int length){
 		 	StringBuilder sb = new StringBuilder();
 		 	for(int i=0; i<length; i++){
@@ -14,12 +13,6 @@ public class TestUtils {
 		 	}
 		 	return sb.toString();
 	 }
-	 
-	/* public static byte[] convertObjectToJsonBytes(Object object) throws IOException {
-	        ObjectMapper mapper = new ObjectMapper();
-	        mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
-	        return mapper.writeValueAsBytes(object);
-	    }*/
 	 
 	 public static String asJsonString(Object object) throws JsonProcessingException{
 		 ObjectMapper mapper = new ObjectMapper();
