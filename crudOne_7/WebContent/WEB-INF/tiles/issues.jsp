@@ -52,7 +52,7 @@
 		<tr>
 			<sf:form commandName="issue">
 				<td><c:out value="${issue.username}" /></td>
-				<td><c:out value="${issue.caseType}${issue.sygNumber}" /></td>
+				<td><c:out value="${issue.caseType}${'_'}${issue.sygNumber}" /></td>
 				<td><c:out value="${issue.name}" /></td>
 				<td class="cell"><c:out value="${issue.deadline}" /></td>
 				<td><c:out value="${issue.text}" /></td>

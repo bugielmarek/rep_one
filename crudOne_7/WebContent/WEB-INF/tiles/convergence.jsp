@@ -44,7 +44,7 @@
 	</tr>
 	<tr>
 		<td><c:out value="${convergence.username}" /></td>
-		<td><c:out value="${convergence.caseType}${convergence.sygNumber}" /></td>
+		<td><c:out value="${convergence.caseType}${'_'}${convergence.sygNumber}" /></td>
 		<td><c:out value="${convergence.arrivedAt}" /></td>
 		<td><c:out value="${convergence.office}" /></td>
 		<td class="cell"><c:out value="${convergence.name}" /></td>

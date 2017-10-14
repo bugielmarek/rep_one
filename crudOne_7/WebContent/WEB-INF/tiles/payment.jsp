@@ -45,7 +45,7 @@
 	<tr>
 		<td><c:out value="${payment.username}" /></td>
 		<td><c:out value="${payment.name}" /></td>
-		<td><c:out value="${payment.caseType}${payment.sygNumber}" /></td>
+		<td><c:out value="${payment.caseType}${'_'}${payment.sygNumber}" /></td>
 		<td class="cell"><c:out value="${payment.deadline}" /></td>
 		<td>
 				<a href="${editUrl}" class="resultsButton_1"><spring:message code='button.edit' /></a>
