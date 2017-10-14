@@ -131,10 +131,10 @@ public class ContactControllerTest {
 	public void testCreateContact_POST() throws Exception {
 		mockMvc = standaloneSetup(controller).build();
 		
-		Contact unsaved = new Contact.ContactBuilder()
+		Contact unsaved = Contact.builder()
 				.name("someName")
 				.build();
-		Contact saved = new Contact.ContactBuilder()
+		Contact saved = Contact.builder()
 				.id(1L)
 				.name("someName")
 				.build();
@@ -157,7 +157,7 @@ public class ContactControllerTest {
 	public void testContact() throws Exception {
 		mockMvc = standaloneSetup(controller).build();
 
-		Contact contact = new Contact.ContactBuilder()
+		Contact contact = Contact.builder()
 				.id(1L)
 				.name("someName")
 				.build();
@@ -179,7 +179,7 @@ public class ContactControllerTest {
 	public void testEditContact() throws Exception {
 		mockMvc = standaloneSetup(controller).build();
 
-		Contact contact = new Contact.ContactBuilder()
+		Contact contact = Contact.builder()
 				.id(1L)
 				.name("someName")
 				.build();
@@ -214,7 +214,7 @@ public class ContactControllerTest {
 	@Test
 	public void testFindContact_MatchingResults_DefaultPage() throws Exception {
 		mockMvc = standaloneSetup(controller).build();
-		Contact formContact = new Contact.ContactBuilder()
+		Contact formContact = Contact.builder()
 				.name("nameMatchingResultsInDB")
 				.build();
 		FormClass formClass = new FormClass(formContact);
@@ -240,7 +240,7 @@ public class ContactControllerTest {
 	@Test
 	public void testFindContact_MatchingResults_PageIsNotDefault() throws Exception {
 		mockMvc = standaloneSetup(controller).build();
-		Contact formContact = new Contact.ContactBuilder()
+		Contact formContact = Contact.builder()
 				.name("nameMatchingResultsInDB")
 				.build();
 		FormClass formClass = new FormClass(formContact);
@@ -268,7 +268,7 @@ public class ContactControllerTest {
 	public void testFindContact_NoResultsMatching() throws Exception {
 		mockMvc = standaloneSetup(controller)
 				.build();
-		Contact formContact = new Contact.ContactBuilder()
+		Contact formContact = Contact.builder()
 					.name("nameMatchingNoResultsInDB")
 					.build();
 		FormClass formClass = new FormClass(formContact);
@@ -289,11 +289,11 @@ public class ContactControllerTest {
 
 	private Page<Contact> createContactsPage() {
 		List<Contact> list = Arrays.asList(
-				new Contact.ContactBuilder()
+				Contact.builder()
 				.id(1L)
 				.name("nameOne")
 				.build(),
-				new Contact.ContactBuilder()
+				Contact.builder()
 				.id(2L)
 				.name("nameTwo")
 				.build());

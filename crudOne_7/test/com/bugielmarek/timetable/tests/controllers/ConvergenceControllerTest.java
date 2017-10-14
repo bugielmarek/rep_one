@@ -136,18 +136,18 @@ public class ConvergenceControllerTest {
 	public void testCreateConvergence_POST_ValidConvergencePassed() throws Exception{
 		mockMvc = standaloneSetup(controller)
 				.build();
-		Convergence unsaved = new Convergence.ConvergenceBuilder()
+		Convergence unsaved = Convergence.builder()
 						.name("someName")
 						.caseType(CaseType.KMP)
 						.sygNumber("1111/11")
 						.date("2017-09-06")
 						.office("KS Szostek")
 						.build();
-		User user = new User.UserBuilder()
+		User user = User.builder()
 				.id(1L)
 				.username("BugMar")
 				.build();
-		Convergence saved = new Convergence.ConvergenceBuilder()
+		Convergence saved = Convergence.builder()
 				.id(1L)
 				.name("someName")
 				.caseType(CaseType.KMP)
@@ -188,7 +188,7 @@ public class ConvergenceControllerTest {
 		mockMvc = standaloneSetup(controller)
 				.setSingleView(new InternalResourceView(""))
 				.build();
-		Convergence unsaved = new Convergence.ConvergenceBuilder()
+		Convergence unsaved = Convergence.builder()
 						.name(TestUtils.createStringWithLength(81))
 						.sygNumber("1111/")
 						.date("201-09-06")
@@ -215,7 +215,7 @@ public class ConvergenceControllerTest {
 	public void testConvergence() throws Exception{
 		mockMvc = standaloneSetup(controller)
 				.build();
-			Convergence convergence = new Convergence.ConvergenceBuilder()
+			Convergence convergence = Convergence.builder()
 							.id(1L)
 							.name("someName")
 							.build();
@@ -237,7 +237,7 @@ public class ConvergenceControllerTest {
 	public void testEditConvergence() throws Exception{
 		mockMvc = standaloneSetup(controller)
 				.build();
-		Convergence convergence = new Convergence.ConvergenceBuilder()
+		Convergence convergence = Convergence.builder()
 						.id(1L)
 						.name("someName")
 						.build();
@@ -274,7 +274,7 @@ public class ConvergenceControllerTest {
 		mockMvc = standaloneSetup(controller)
 				.build();
 			Page<Convergence> page = createConvergencesPage(20);
-			Convergence convergence = new Convergence.ConvergenceBuilder()
+			Convergence convergence = Convergence.builder()
 							.name("nameMatchinfSomeResultInDB")
 							.build();
 			FormClass formClass = new FormClass(convergence);
@@ -300,7 +300,7 @@ public class ConvergenceControllerTest {
 	public void testFindConvergence_NoMatchingResults() throws Exception{
 		mockMvc = standaloneSetup(controller)
 				.build();
-			Convergence convergence = new Convergence.ConvergenceBuilder()
+			Convergence convergence = Convergence.builder()
 							.name("nameMatchingNoResultsInDB")
 							.build();
 			FormClass formClass = new FormClass(convergence);
@@ -321,7 +321,7 @@ public class ConvergenceControllerTest {
 		
 		List<Convergence> list = new ArrayList<>();
 		for(int i=0; i<count; i++){
-			list.add(new Convergence.ConvergenceBuilder()
+			list.add(Convergence.builder()
 							.name("name" + i)
 							.build());
 					}

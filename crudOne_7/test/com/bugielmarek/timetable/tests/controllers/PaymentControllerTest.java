@@ -145,17 +145,17 @@ public class PaymentControllerTest {
 		
 		mockMvc = standaloneSetup(controller)
 				.build();
-		Payment unsaved = new Payment.PaymentBuilder()
+		Payment unsaved = Payment.builder()
 				.name("someName")
 				.caseType(CaseType.KM)
 				.sygNumber("2017/17")
 				.date("2017-09-04")
 				.build();
-		User user = new User.UserBuilder()
+		User user = User.builder()
 			.id(1L)
 			.username("BugMar")
 			.build();
-		Payment saved = new Payment.PaymentBuilder()
+		Payment saved = Payment.builder()
 				.id(1L)
 				.name("someName")
 				.caseType(CaseType.KM)
@@ -194,18 +194,18 @@ public class PaymentControllerTest {
 		mockMvc = standaloneSetup(controller)
 				.setSingleView(view)
 				.build();
-		Payment unsaved = new Payment.PaymentBuilder()
+		Payment unsaved = Payment.builder()
 				.name("someName")
 				.caseType(CaseType.KM)
 				.sygNumber("2017/17")
 				.date("2017-09-04")
 				.build();
-		Payment existing = new Payment.PaymentBuilder()
+		Payment existing = Payment.builder()
 				.id(1L).name("someOtherName")
 				.caseType(CaseType.KM)
 				.sygNumber("2017/17")
 				.deadline(LocalDate.now())
-				.user(new User.UserBuilder()
+				.user(User.builder()
 						.id(1L).username("BugMar")
 						.build())
 				.build();
@@ -244,7 +244,7 @@ public class PaymentControllerTest {
 		mockMvc = standaloneSetup(controller)
 				.setSingleView(view)
 				.build();
-		Payment unsaved = new Payment.PaymentBuilder()
+		Payment unsaved = Payment.builder()
 				.name(TestUtils.createStringWithLength(81))
 				.sygNumber("2017/")
 				.date("201-09-04")
@@ -270,12 +270,12 @@ public class PaymentControllerTest {
 		
 		mockMvc = standaloneSetup(controller)
 				.build();
-		Payment retrived = new Payment.PaymentBuilder()
+		Payment retrived = Payment.builder()
 				.id(1L).name("someName")
 				.caseType(CaseType.KM)
 				.sygNumber("2017/17")
 				.deadline(LocalDate.now())
-				.user(new User.UserBuilder()
+				.user(User.builder()
 						.id(1L).username("BugMar")
 						.build())
 				.build();
@@ -301,13 +301,13 @@ public class PaymentControllerTest {
 	public void testEditPayment() throws Exception {
 		mockMvc = standaloneSetup(controller)
 				.build();
-		Payment retrived = new Payment.PaymentBuilder()
+		Payment retrived = Payment.builder()
 				.id(1L)
 				.name("someName")
 				.caseType(CaseType.KM)
 				.sygNumber("2017/17")
 				.deadline(LocalDate.now())
-				.user(new User.UserBuilder()
+				.user(User.builder()
 						.id(1L)
 						.username("BugMar")
 						.build())
@@ -350,7 +350,7 @@ public class PaymentControllerTest {
 		
 		mockMvc = standaloneSetup(controller)
 				.build();
-		Payment formPayment = new Payment.PaymentBuilder()
+		Payment formPayment = Payment.builder()
 				.name("nameMarchingResultsInDB")
 				.build();
 		FormClass formClass = new FormClass(formPayment);
@@ -377,7 +377,7 @@ public class PaymentControllerTest {
 		
 		mockMvc = standaloneSetup(controller)
 				.build();
-		Payment formPayment = new Payment.PaymentBuilder()
+		Payment formPayment = Payment.builder()
 				.name("nameMarchingNoResultsInDB")
 				.build();
 		FormClass formClass = new FormClass(formPayment);
@@ -397,7 +397,7 @@ public class PaymentControllerTest {
 	private Page<Payment> createPaymentPage(int count) {
 		List<Payment> paymentList = new ArrayList<>();
 		for (int i = 0; i < count; i++) {
-			paymentList.add(new Payment.PaymentBuilder().id(1L + i).name("name" + (1 + i)).build());
+			paymentList.add(Payment.builder().id(1L + i).name("name" + (1 + i)).build());
 		}
 		Page<Payment> paymentPage = new PageImpl<>(paymentList);
 		return paymentPage;

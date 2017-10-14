@@ -137,7 +137,7 @@ public class IssueControllerTest {
 	public void testIssue() throws Exception {
 		mockMvc = standaloneSetup(controller)
 				.build();
-			Issue retrived = new Issue.IssueBuilder()
+			Issue retrived = Issue.builder()
 					.id(1L)
 					.name("someName")
 					.build();
@@ -159,7 +159,7 @@ public class IssueControllerTest {
 	public void testEditIssue() throws Exception {
 		mockMvc = standaloneSetup(controller)
 				.build();
-			Issue retrived = new Issue.IssueBuilder()
+			Issue retrived = Issue.builder()
 				.id(1L)
 				.name("someName")
 				.build();
@@ -195,18 +195,18 @@ public class IssueControllerTest {
 	public void testCreateIssuePOST_NoValidationErrors() throws Exception{
 		mockMvc = standaloneSetup(controller)
 				.build();
-			Issue unsaved = new Issue.IssueBuilder()
+			Issue unsaved = Issue.builder()
 					.name("someName")
 					.caseType(CaseType.KMS)
 					.sygNumber("1111/17")
 					.text("someText")
 					.date("2017-09-05")
 					.build();
-			User user = new User.UserBuilder()
+			User user = User.builder()
 				.id(1L)
 				.username("BugMar")
 				.build();
-			Issue saved = new Issue.IssueBuilder()
+			Issue saved = Issue.builder()
 					.id(1L)
 					.name("someName")
 					.caseType(CaseType.KMS)
@@ -248,7 +248,7 @@ public class IssueControllerTest {
 		mockMvc = standaloneSetup(controller)
 				.setSingleView(new InternalResourceView(""))
 				.build();
-			Issue unsaved = new Issue.IssueBuilder()
+			Issue unsaved = Issue.builder()
 				.name("someName")
 				.caseType(CaseType.KMS)
 				.sygNumber("1111/1")
@@ -279,7 +279,7 @@ public class IssueControllerTest {
 	public void testFindIssue_NameOnly_MatchingResultsDefaultPage() throws Exception{
 		mockMvc = standaloneSetup(controller)
 				.build();
-			Issue formIssue = new Issue.IssueBuilder()
+			Issue formIssue = Issue.builder()
 					.name("nameMatchingResultsInDB")
 					.build();
 			FormClass formClass = new FormClass(formIssue);
@@ -306,7 +306,7 @@ public class IssueControllerTest {
 	public void testFindIssue_NameOnly_MatchingResultsPageIsNotDefault() throws Exception{
 		mockMvc = standaloneSetup(controller)
 				.build();
-			Issue formIssue = new Issue.IssueBuilder()
+			Issue formIssue = Issue.builder()
 					.name("nameMatchingResultsInDB")
 					.build();
 			FormClass formClass = new FormClass(formIssue);
@@ -333,7 +333,7 @@ public class IssueControllerTest {
 	public void testFindIssue_NameOnly_NoResultsMatchingGivenInput() throws Exception{
 		mockMvc = standaloneSetup(controller)
 				.build();
-			Issue formIssue = new Issue.IssueBuilder()
+			Issue formIssue = Issue.builder()
 					.name("nameMatchingNoResultsInDB")
 					.build();
 			FormClass formClass = new FormClass(formIssue);
@@ -355,7 +355,7 @@ public class IssueControllerTest {
 		
 		List<Issue> list = new ArrayList<>();
 		for(int i=0; i<count; i++){
-			list.add(new Issue.IssueBuilder()
+			list.add(Issue.builder()
 							.id(1L + i)
 							.name("name" + (1 + i))
 							.build());

@@ -100,12 +100,12 @@ public class UserControllerTest {
 		
 		mockMvc = standaloneSetup(controller)
 				.build();
-		User unsaved = new User.UserBuilder()
+		User unsaved = User.builder()
 				.username("nameee")
 				.password("somePassword")
 				.formPassword("somePassword")
 				.build();
-		User saved = new User.UserBuilder()
+		User saved = User.builder()
 			.id(1L)
 			.username("namee")
 			.password("someEncryptedPassword")
@@ -137,7 +137,7 @@ public class UserControllerTest {
 		mockMvc = standaloneSetup(controller)
 				.setSingleView(view)
 				.build();
-		User unsaved = new User.UserBuilder()
+		User unsaved = User.builder()
 				.username("nameee")
 				.password("somepassword")
 				.formPassword("somepassword")
@@ -166,7 +166,7 @@ public class UserControllerTest {
 		mockMvc = standaloneSetup(controller)
 				.setSingleView(view)
 				.build();
-		User unsaved = new User.UserBuilder()
+		User unsaved = User.builder()
 				.username(TestUtils.createStringWithLength(7))
 				.password(TestUtils.createStringWithLength(16))
 				.formPassword(TestUtils.createStringWithLength(16))
@@ -193,7 +193,7 @@ public class UserControllerTest {
 		
 		mockMvc = standaloneSetup(controller)
 				.build();
-		User retrived = new User.UserBuilder()
+		User retrived = User.builder()
 				.id(1L)
 				.username("someName")
 				.password("someEncryptedPassword")
@@ -221,7 +221,7 @@ public class UserControllerTest {
 	public void testEditUser() throws Exception {
 		mockMvc = standaloneSetup(controller)
 				.build();
-		User retrived = new User.UserBuilder()
+		User retrived = User.builder()
 				.id(1L)
 				.username("someName")
 				.password("someEncryptedPassword")
@@ -264,7 +264,7 @@ public class UserControllerTest {
 	private Page<User> createUserPage(int count) {
 		List<User> userList = new ArrayList<>();
 		for (int i = 0; i < count; i++) {
-			userList.add(new User.UserBuilder().id(1L + i).username("name" + (1 + i)).build());
+			userList.add(User.builder().id(1L + i).username("name" + (1 + i)).build());
 		}
 		Page<User> userPage = new PageImpl<>(userList);
 		return userPage;
