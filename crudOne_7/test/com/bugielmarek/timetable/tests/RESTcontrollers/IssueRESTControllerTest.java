@@ -89,7 +89,7 @@ public class IssueRESTControllerTest {
 	
 	@Test
 	public void testIssue_Found() throws Exception{
-		Issue retrived = new Issue.IssueBuilder()
+		Issue retrived = Issue.builder()
 				.id(1L)
 				.name("someName")
 				.build();
@@ -206,12 +206,12 @@ public class IssueRESTControllerTest {
 	
 	@Test
 	public void testCreate_ValidIssuePassed() throws Exception{
-		Issue passed = new Issue.IssueBuilder()
+		Issue passed = Issue.builder()
 				.name("someName")
 				.caseType(CaseType.KM)
 				.sygNumber("1111/11")
 				.build();
-		Issue saved = new Issue.IssueBuilder()
+		Issue saved = Issue.builder()
 				.id(1L)
 				.name("someName")
 				.caseType(CaseType.KM)
@@ -236,7 +236,7 @@ public class IssueRESTControllerTest {
 	
 	@Test
 	public void testCreate_InvalidIssuePassed_ErrorFields_Text_Date_SygNumber_CaseType() throws Exception{
-		Issue passed = new Issue.IssueBuilder()
+		Issue passed = Issue.builder()
 				.name("someName")
 				.sygNumber("1111/1")
 				.text(TestUtils.createStringWithLength(501))
@@ -255,14 +255,14 @@ public class IssueRESTControllerTest {
 	
 	@Test
 	public void testUpdate_IssueFound_ValidIssuePassed_UpdatedFields_Name_CaseType_SygNumber_Text() throws Exception{
-		Issue retrived = new Issue.IssueBuilder()
+		Issue retrived = Issue.builder()
 				.id(1L)
 				.name("someName")
 				.caseType(CaseType.KMS)
 				.sygNumber("1111/11")
 				.text("someText")
 				.build();
-		Issue passed = new Issue.IssueBuilder()
+		Issue passed = Issue.builder()
 				.id(1L)
 				.name("someNewName")
 				.caseType(CaseType.KMP)
@@ -270,7 +270,7 @@ public class IssueRESTControllerTest {
 				.date("2017-09-05")
 				.text("someNewText")
 				.build();
-		Issue saved = new Issue.IssueBuilder()
+		Issue saved = Issue.builder()
 				.id(1L)
 				.name("someNewName")
 				.caseType(CaseType.KMP)
@@ -299,7 +299,7 @@ public class IssueRESTControllerTest {
 	
 	@Test
 	public void testUpdate_IssueNotFound() throws Exception{
-		Issue passed = new Issue.IssueBuilder()
+		Issue passed = Issue.builder()
 				.id(1L)
 				.name("someNewName")
 				.caseType(CaseType.KMP)
@@ -323,14 +323,14 @@ public class IssueRESTControllerTest {
 	
 	@Test
 	public void testUpdate_IssueFound_InvalidIssuePassed_ErrorFields_Text_Date_SygNumber() throws Exception{
-		Issue retrived = new Issue.IssueBuilder()
+		Issue retrived = Issue.builder()
 				.id(1L)
 				.name("someName")
 				.caseType(CaseType.KMS)
 				.sygNumber("1111/11")
 				.text("someText")
 				.build();
-		Issue passed = new Issue.IssueBuilder()
+		Issue passed = Issue.builder()
 				.id(1L)
 				.name("someName")
 				.caseType(CaseType.KMS)
@@ -354,11 +354,11 @@ public class IssueRESTControllerTest {
 	
 	private static List<Issue> createIssueList(){
 		List<Issue> list = Arrays.asList(
-				new Issue.IssueBuilder()
+				Issue.builder()
 					.id(1L)
 					.name("nameOne")
 					.build(),
-				new Issue.IssueBuilder()
+				Issue.builder()
 					.id(2L)
 					.name("nameTwo")
 					.build());

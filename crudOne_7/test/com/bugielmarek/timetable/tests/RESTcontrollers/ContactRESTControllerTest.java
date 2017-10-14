@@ -86,7 +86,7 @@ public class ContactRESTControllerTest {
 	@Test
 	public void testContact_Found() throws Exception{
 		
-		Contact contact = new Contact.ContactBuilder()
+		Contact contact = Contact.builder()
 				.id(1L)
 				.name("someName")
 				.build();
@@ -123,7 +123,7 @@ public class ContactRESTControllerTest {
 	@Test
 	public void testDeleteContact_Found() throws Exception{
 
-		Contact contact = new Contact.ContactBuilder()
+		Contact contact = Contact.builder()
 				.id(1L)
 				.name("someName")
 				.build();
@@ -196,10 +196,10 @@ public class ContactRESTControllerTest {
 	@Test
 	public void testCreateContact() throws Exception{
 		
-		Contact passed = new Contact.ContactBuilder()
+		Contact passed = Contact.builder()
 				.name("someName")
 				.build();
-		Contact saved = new Contact.ContactBuilder()
+		Contact saved = Contact.builder()
 				.id(1L)
 				.name("someName")
 				.build();
@@ -222,15 +222,15 @@ public class ContactRESTControllerTest {
 	@Test
 	public void testUpdateContact_Found() throws Exception{
 		
-		Contact passed = new Contact.ContactBuilder()
+		Contact passed = Contact.builder()
 				.id(1L)
 				.name("someChangedName")
 				.build();
-		Contact retrived = new Contact.ContactBuilder()
+		Contact retrived = Contact.builder()
 				.id(1L)
 				.name("someName")
 				.build();
-		Contact saved = new Contact.ContactBuilder()
+		Contact saved = Contact.builder()
 				.id(1L)
 				.name("someChangedName")
 				.build();
@@ -255,7 +255,7 @@ public class ContactRESTControllerTest {
 	@Test
 	public void testUpdateContact_NotFound() throws Exception{
 		
-		Contact passed = new Contact.ContactBuilder()
+		Contact passed = Contact.builder()
 				.id(1L)
 				.name("someChangedName")
 				.build();
@@ -276,11 +276,11 @@ public class ContactRESTControllerTest {
 	private List<Contact> createContactsList() {
 
 		List<Contact> list = Arrays.asList(
-				new Contact.ContactBuilder()
+				Contact.builder()
 				.id(1L)
 				.name("nameOne")
 				.build(),
-				new Contact.ContactBuilder()
+				Contact.builder()
 				.id(2L)
 				.name("nameTwo")
 				.build());
