@@ -1,0 +1,655 @@
+/* ------------------------------------------------------------------------------ TABLES ------------------------------------ */
+
+/* =============================== WEBAPP TITLE TABLE */
+.webAppTitle {
+	padding: 15px 15px;
+	background-color: #f0f0f0;
+	color: gray;
+	font-weight: bold;
+	letter-spacing: 10px;
+	font-size: 30px;
+	position: absolute;
+	bottom: 0px;
+	left: 40px
+}
+
+/* =============================== USERS TABLE */
+.users {
+	width: 300px;
+	border-collapse: collapse;
+	position: absolute;
+	top: 40px;
+	left: 40%;
+	text-align: left;
+	border: 3px solid black;
+	box-shadow: 1px 1px 20px black
+}
+
+.users th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	background-color: #333;
+	color: white;
+	text-align: center
+}
+
+.users td {
+	padding: 8px
+}
+
+.users tr {
+	background-color: #f5f5f5
+}
+
+.users tr:nth-child(even) {
+	background-color: #bfbfbf;
+	color: black
+}
+
+.users tr:hover {
+	background-color: #19c5b2
+}
+
+
+/* =============================== CREATE  TABLE */
+.create {
+	min-width: 400px;
+	border-collapse: collapse;
+	position: absolute;
+	top: 40px;
+	left: 35%;
+	text-align: left;
+	box-shadow: 1px 1px 20px black;
+	font-weight: bold;
+	border: 3px solid black;
+	background-color: #f0f0f0;
+	padding: 8px
+}
+
+.create th {
+	text-align: center
+}
+
+.create td {
+	padding: 8px
+}
+
+.create tr:nth-child(even) {
+	background-color: #bfbfbf;
+	color: black
+}
+
+.create th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	background-color: #333;
+	color: white
+}
+
+/* =============================== EXISTS  TABLE */
+.existsTable {
+	width: 400px;
+	border-collapse: collapse;
+	position: absolute;
+	top: 40px;
+	right: 4%;
+	text-align: center;
+	box-shadow: 1px 1px 20px black
+}
+
+.existsTable td, .existsTable th {
+	padding: 8px
+}
+
+.existsTable tr {
+	background-color: #f5f5f5;
+	border: 2px solid black
+}
+
+.existsTable tr:nth-child(even) {
+	background-color: #bfbfbf;
+	color: black
+}
+
+.existsTable th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	background-color: #333;
+	color: white
+}
+
+/* =============================== LOGIN TABLE */
+.loginTable {
+	position: absolute;
+	top: 40px;
+	left: 40%;
+	border-collapse: collapse;
+	width: 330px;
+	padding: 6px;
+	margin-left: 10px;
+	color: black;
+	font-weight: bold;
+	border: 3px solid #333;
+	box-shadow: 1px 1px 20px black
+}
+
+.loginTable th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	background-color: #333;
+	color: white
+}
+
+.loginTable td {
+	padding: 4px
+}
+
+.loginTable tr {
+	background-color: #f0f0f0
+}
+
+
+/* =============================== RESULTS TABLE */
+.resultsTable {
+	min-width: 950px;
+	max-width: 1250px;
+	border-collapse: collapse;
+	position: absolute;
+	top: 40px;
+	left: 5%;
+	text-align: center;
+	box-shadow: 1px 1px 20px black
+	
+}
+
+.resultsTable td {
+	text-align: center;
+	padding: 5px
+}
+
+.resultsTable tr {
+	background-color: #bfbfbf;
+	-webkit-box-shadow: 2px 2px 4px black;
+	box-shadow: 2px 2px 4px black;
+	border: 2px solid black
+}
+
+.resultsTable tr:nth-child(even) {
+	background-color: #f5f5f5;
+	color: black
+}
+
+.resultsTable tr:hover {
+	background-color: #19c5b2
+}
+
+.resultsTable tr td:last-child{
+	width: 150px
+}	
+
+.resultsTable th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	background-color: #333;
+	color: white;
+	min-width: 150px
+}
+
+
+/* =============================== QUOTE TABLE */
+.quoteTable {
+	min-width: 950px;
+	max-width: 1250px;
+	border-collapse: collapse;
+	position: absolute;
+	top: 40px;
+	left: 5%;
+	text-align: center;
+	box-shadow: 1px 1px 20px black
+}
+
+
+.quoteTable td {
+	text-align: center;
+	padding: 5px
+}
+
+.quoteTable tr {
+	background-color: #bfbfbf;
+	-webkit-box-shadow: 2px 2px 4px black;
+	box-shadow: 2px 2px 4px black;
+	border: 2px solid black
+}
+
+.quoteTable tr:nth-child(even) {
+	background-color: #f5f5f5;
+	color: black
+}
+
+.quoteTable tr td:last-child{
+	width: 250px
+}	
+
+.quoteTable th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	background-color: #333;
+	color: white;
+	text-align: center;
+}
+
+/* =============================== CELLS */
+.cell {
+	background-color: #19c5b2;
+	font-weight: bold
+}
+
+.cell_2 {
+	background-color: #333;
+	color: white;
+	text-align: center
+}
+
+/* =============================== SEARCH TABLE */
+.searchTable {
+	width: auto;
+	border-collapse: collapse;
+	position: absolute;
+	top: 40px;
+	left: 10%;
+	text-align: left;
+	box-shadow: 1px 1px 20px black;
+	font-weight: bold
+}
+.searchTable tr {
+	background-color: #bfbfbf;
+	color: black;
+	border: 2px solid black
+}
+
+.searchTable th {
+	padding: 6px 9px;
+	background-color: #333;
+	color: #19c5b2
+}
+.searchTable td {
+	padding: 6px
+}
+
+
+/* ------------------------------------------------------------------------------ TEXT TWEAKINGS ------------------------------------ */
+.km {
+	color: blue
+}
+
+.kms {
+	color: green
+}
+
+.kmp {
+	color: red
+}
+
+.sygList {
+	font-weight: bold;
+	font-size: medium;
+	margin-left: 30px
+}
+
+.sygList>li {
+ 	margin: 10px;
+ 	display: inline-block
+}
+
+.sygList_2 {
+	font-weight: bold;
+	font-size: medium;
+	text-align: left
+}
+
+.sygList_2>li {
+	margin: 10px;
+	display: inline-block
+}
+.rememberMe {
+	display: inline-block;
+	font-size: 11px;
+	color: gray
+}
+
+.principal{
+	color: teal;
+	font-size: medium;
+	font-weight: bold
+}
+
+.valid {
+	font-size: medium;
+	color: #19c5b2;
+	margin-left: 10px
+}
+
+.errors {
+	font-size: medium;
+	font-weight: bold;
+	color: #fb8004;
+	font-weight: normal;
+	text-align: left;
+	margin-left: 10px
+}
+
+.errors_2 {
+	font-size: medium;
+	color: #fb8004;
+	text-align: center
+}
+
+.author {
+	padding: 15px 15px;
+	background-color: #19c5b2;
+	color: white;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	border: 0;
+	position: absolute;
+	left: 40px;
+	box-shadow: 1px 1px 10px 1px black
+}
+
+.author:hover {
+	background-color: teal;
+	color: white
+}
+
+.smallItalic{
+	font-size: small;
+	font-style: italic
+}
+
+.currentPage{
+	font-weight: bold;
+	color: #19c5b2;
+	display: inline-block
+}
+
+.pageNumbers{
+	font-size: medium;
+	display: inline-block
+}
+
+.pageNumbers>a{
+	color: white
+}
+
+/* ------------------------------------------------------------------------------ INPUTS ------------------------------------ */
+/* =============================== INPUT TEXT */
+input[type=text] {
+	width: 200px;
+	height: 20px;
+	margin-left: 10px;
+	border: 2px solid gray;
+	border-radius: 5px
+}
+
+input[type=text]:focus {
+	border: 2px solid black;
+	background-color: #fb8004
+}
+
+/* =============================== INPUT TEXTAREA */
+
+.textArea {
+	width: 600px;
+	height: 120px;
+	margin-left: 10px;
+	border: 2px solid gray;
+	border-radius: 5px
+}
+
+.textArea:focus {
+	border: 2px solid black;
+	background-color: #fb8004
+}
+/* =============================== INPUT PASSWORD */
+input[type=password] {
+	width: 200px;
+	height: 20px;
+	margin-left: 10px;
+	border: 2px solid gray;
+	border-radius: 5px
+}
+
+input[type=password]:focus {
+	border: 2px solid black;
+	background-color: #fb8004
+}
+/* ------------------------------------------------------------------------------ OUTPUTS ------------------------------------ */
+.searchFormAlert_1 {
+	position: absolute;
+	top: 40px;
+	right: 14%;
+	width: 300px;
+	color: #fb8004;
+	font-size: small;
+	font-weight: bold
+}
+
+.searchFormAlert_2 {
+	position: absolute;
+	top: 50px;
+	right: 40%;
+	color: #fb8004;
+	font-size: medium;
+	font-weight: bold;
+	text-align: center;
+	background: white;
+	padding: 5px 5px;
+	border: 3px solid black;
+	border-radius: 5px
+}
+
+/* ------------------------------------------------------------------------------ BUTTONS ------------------------------------ */
+
+/* =============================== FORM BUTTON {login, createPayment, createUser, edit, cancel} */
+.formButton {
+	padding: 5px 7px;
+	background-color: black;
+	color: white;
+	font-size: 12px;
+	font-weight: bold;
+	margin-left: 30px;
+	text-decoration: none;
+	cursor: pointer;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	border: 0px;
+	border-radius: 5px
+}
+
+.formButton:hover {
+	background-color: gray;
+	color: white
+}
+/* =============================== FORM BUTTON_2 {delete} */
+.formButton_2 {
+	padding: 5px 7px;
+	background-color: teal;
+	color: white;
+	font-size: 12px;
+	font-weight: bold;
+	margin-left: 10px;
+	text-decoration: none;
+	cursor: pointer;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	border-radius: 5px;
+	border: 0px
+}
+
+.formButton_2:hover {
+	background-color: gray
+}
+/* =============================== RESULTS TABLE BUTTON_1 {edit} */
+.resultsButton_1 {
+	padding: 5px 7px;
+	background-color: black;
+	color: white;
+	font-size: 12px;
+	font-weight: bold;
+	margin-left: 5px;
+	text-decoration: none;
+	cursor: pointer;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	border: 0px;
+	border-radius: 5px
+}
+
+.resultsButton_1:hover {
+	background-color: gray;
+	color: white
+}
+
+
+
+/* =============================== RESULTS TABLE BUTTON_2 {delete} */
+.resultsButton_2 {
+	padding: 5px 7px;
+	background-color: teal;
+	color: white;
+	font-size: 12px;
+	font-weight: bold;
+	margin-left: 10px;
+	text-decoration: none;
+	cursor: pointer;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	border-radius: 5px;
+	border: 0px
+}
+
+.resultsButton_2:hover {
+	background-color: gray
+}
+/* =============================== LOGOUT BUTTON */
+.logoutButton {
+	padding: 8px 10px;
+	background-color: #19c5b2;
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	border: 0
+}
+
+/* ------------------------------------------------------------------------------ TILES ------------------------------------ */
+/* =============================== FOOTER  */
+div.footer {
+	font-size: small;
+	color: white;
+	background-color: #19c5b2;
+ 	height: 60px
+}
+/* =============================== CONTENT */
+div.content {
+	position: relative;
+	padding: 40px;
+	height: 440px;
+	background-color: #808080
+} 
+/* =============================== HEADER */
+div.header {
+	position: relative;
+	text-align: center;
+	width: 100%;
+	height: 110px;
+	background-color: #f0f0f0
+}
+
+/* ------------------------------------------------------------------------------ NAVIGATION BAR ------------------------------------ */
+nav {
+	position: relative;
+	float: left;
+	width: 100%;
+	height: 50px;
+	background: #19c5b2
+}
+
+nav>ul {
+	float: right;
+	width: 90%;
+	height: 50px;
+	background: #19c5b2
+}
+
+nav>ul>li {
+	position: relative;
+	float: left;
+	line-height: 50px 
+}
+
+nav>ul>li>a {
+	font-weight: bold;
+	color: white;
+	padding: 16px 10px;
+	margin: 0
+}
+
+nav>ul>li>a:hover {
+	background: teal
+}
+
+nav>ul>li>ul {
+	position: absolute;
+	display: none;
+	left: 0
+}
+
+nav>ul>li:hover>ul {
+	display: block
+}
+
+nav>ul>li>ul>li {
+	line-height: 30px;
+	background: #19c5b2;
+	height: 30px;
+	min-width: 200px
+}
+
+nav>ul>li>ul>li:hover {
+	background: teal
+}
+
+nav>ul>li>ul>li>a {
+ 	padding: 10px 25px; 
+	font-weight: bold;
+	font-size: small;
+	color: white
+}
+
+.dropList {
+	font-weight: bold;
+	color: white;
+	padding: 0px 10px
+}
+
+.dropList:hover {
+	background: teal
+}  
+/* ------------------------------------------------------------------------------  GENERAL ------------------------------------ */
+* {
+	list-style: none;
+	font-family: Helvetica,Arial,sans-serif;
+	font-size: 15px;
+	text-decoration: none;
+	padding: 0;
+	margin: 0
+}
+
+

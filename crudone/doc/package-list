@@ -1,0 +1,13 @@
+com.bugielmarek.crudone.RESTClientModels
+com.bugielmarek.crudone.RESTcontrollers
+com.bugielmarek.crudone.controllers
+com.bugielmarek.crudone.daos
+com.bugielmarek.crudone.errors
+com.bugielmarek.crudone.exceptions
+com.bugielmarek.crudone.models
+com.bugielmarek.crudone.services
+com.bugielmarek.crudone.services.impls
+com.bugielmarek.crudone.tests.RESTcontrollers
+com.bugielmarek.crudone.tests.controllers
+com.bugielmarek.crudone.tests.services
+com.bugielmarek.crudone.tests.utils
