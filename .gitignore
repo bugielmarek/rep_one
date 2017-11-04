@@ -1,4 +1,4 @@
-doc/
+/doc
 .settings/
 target/
 pom.xml.tag
