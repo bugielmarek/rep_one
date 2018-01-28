@@ -8,7 +8,6 @@
 <link href="<c:url value='/static/css/main.css'/>" rel="stylesheet"
 	type="text/css" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<!-- ========================================= <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> ========================================= -->
 
 
 <script type="text/javascript">
@@ -62,12 +61,10 @@
 		</tr>
 		<tr>
 			<td><spring:message code="issue.tableRowCaseType" />
-				<div class="smallItalic">
-					<spring:message code="formOptionalField" />
-				</div></td>
+				</td>
 			<td>
 				<ul class="sygList">
-					<li><sf:radiobutton path="caseType" value="KM" />
+					<li><sf:radiobutton path="caseType" value="KM" checked='checked'/>
 						<div class="km">KM</div></li>
 					<li><sf:radiobutton path="caseType" value="KMS" />
 						<div class="kms">KMS</div></li>
@@ -78,9 +75,7 @@
 		</tr>
 		<tr>
 			<td><spring:message code="issue.tableRowSygNumber" />
-				<div class="smallItalic">
-					<spring:message code="formOptionalField" />
-				</div></td>
+				</td>
 			<td><sf:input type="text" path="sygNumber" /><br>
 				<div class="errors">
 					<sf:errors path="sygNumber"></sf:errors>
