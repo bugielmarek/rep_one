@@ -52,7 +52,7 @@ Wiele rzeczy można by w aplikacji zmienić, uzupełnić lub poprawić, niżej w
 - zwiększyć tzw. *test coverage*
 - uzupełnić dokumentację
 - wprowadzić klasy DTO
-- "rozciągnąć" Spring Securirty na klasy RESTowe, obecnie o bezpieczeństwo REST "troszczy się" wyłącznie ta linijka w konfiguracji: `<security:http pattern="/restclient/**" security="none" />`
+- "rozciągnąć" Spring Security na klasy RESTowe, obecnie o bezpieczeństwo REST "troszczy się" wyłącznie ta linijka w konfiguracji: `<security:http pattern="/restclient/**" security="none" />`
 - zmienić logowanie na logowanie do pliku
 - poprawić warstwę wizualną 
 - udostępnić nowe funkcjonalności
