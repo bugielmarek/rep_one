@@ -14,7 +14,7 @@ Co z punktu biznesowego oferuje aplikacja? Jako "przyszły były" pracownik kanc
 
 ## Baza danych
 		
-W projekcie używam bazy danych **MySQL**. Repozytorium zawiera pliki: `crudoneDB.sql` oraz `crudoneTestDB.sql`, które tworzą dwie bazy danych - zwykłą oraz testową. Plik `crudoneDB.sql` nie tylko tworzy bazę danych, ale również wprowadza do niej przykładowe dane - w tym również dane dotyczące użytkowników. Domyślnie utworzono cztery profile użytkoników. 
+W projekcie używam bazy danych **MySQL**. Folderze `databaseSQL` zawiera pliki: `crudoneDB.sql` oraz `crudoneTestDB.sql`, które tworzą dwie bazy danych - zwykłą oraz testową. Plik `crudoneDB.sql` nie tylko tworzy bazę danych, ale również wprowadza do niej przykładowe dane - w tym również dane dotyczące użytkowników. Domyślnie utworzono cztery profile użytkoników. 
 
 Profil administratora - login: `Admini`, hasło: `Admini`
 
@@ -26,15 +26,14 @@ Niżej instruktaż, w trzech krokach, importowania ww. plików za pomocą progra
 Po dokonaniu importu należy dokonać stosownych zmiań w pliku `context.xml` znajdującym się w folderze `src/main/webapp/META-INF` - należy zmienić wartości polom `username` oraz `password` - tak aby ich wartości były identyczne z tymi używanymi w **MySQL Workbench**. Identyczny krok należy podjąć wobec pliku `jdbc.properties`, pliku konfiguracyjnym dla testowej bazy danych, plik znajduje się w `src/test/resources`.
 
 ## Jak uruchomić aplikację
-1. Uruchamiamy w Eclipse.
+
+Uruchamiamy w Eclipse.
 	- Klonujemy repozytorium.
 	- Dokonujemy importu istniejącego projektu mavenowego.
+	- Dokonujemy zmiany w Project Properties w `Deployment Assembly` dodająć folder `/src/main/webapp`
 	- W razie pojawienia się błędów weryfikujemy konfigurację Eclipse w następujących miejscach: `Build-path`, `Deployment Assembly`, `Project Facets` oraz `Web Project Settings`.
 	- Uruchamiamy aplikację używająć Tomcata.
-			
-2. Plik war i Tomcat.
-	- Umieszczamy plik war w folderze `webapps` i uruchamiamy aplikację.
-	
+				
 
 ## Technologie
 
@@ -64,3 +63,4 @@ Wiele rzeczy można by w aplikacji zmienić, uzupełnić lub poprawić, niżej w
 ![crudone2](https://user-images.githubusercontent.com/32525977/35420046-b4c31424-023b-11e8-92b6-d57aafdecdad.png)
 ![crudone3](https://user-images.githubusercontent.com/32525977/35420055-bed1af3e-023b-11e8-9188-5c6118139712.png)
 ![crudone4](https://user-images.githubusercontent.com/32525977/35420066-cb4dd2e2-023b-11e8-9e99-50a35f43fecd.png)
+![crudone5](https://user-images.githubusercontent.com/32525977/35509842-157d8eae-04f6-11e8-9fd4-9f937c848422.png)
