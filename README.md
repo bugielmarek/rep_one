@@ -28,11 +28,11 @@ Po dokonaniu importu należy dokonać stosownych zmiań w pliku `context.xml` zn
 ## Jak uruchomić aplikację
 
 Uruchamiamy w Eclipse.
-	- Klonujemy repozytorium.
-	- Dokonujemy importu istniejącego projektu mavenowego.
-	- Dokonujemy zmiany w Project Properties w `Deployment Assembly` dodająć folder `/src/main/webapp`
-	- W razie pojawienia się błędów weryfikujemy konfigurację Eclipse w następujących miejscach: `Build-path`, `Deployment Assembly`, `Project Facets` oraz `Web Project Settings`.
-	- Uruchamiamy aplikację używająć Tomcata.
+- Klonujemy repozytorium.
+- Dokonujemy importu istniejącego projektu mavenowego.
+- Dokonujemy zmiany w Project Properties w `Deployment Assembly` dodając folder `/src/main/webapp`
+- W razie pojawienia się błędów weryfikujemy konfigurację Eclipse w następujących miejscach: `Build-path`, `Deployment Assembly`, `Project Facets` oraz `Web Project Settings`.
+- Uruchamiamy aplikację używająć Tomcata.
 				
 
 ## Technologie
