@@ -14,7 +14,7 @@ Co z punktu biznesowego oferuje aplikacja? Jako "przyszły były" pracownik kanc
 
 ## Baza danych
 		
-W projekcie używam bazy danych **MySQL**. Folderze `databaseSQL` zawiera pliki: `crudoneDB.sql` oraz `crudoneTestDB.sql`, które tworzą dwie bazy danych - zwykłą oraz testową. Plik `crudoneDB.sql` nie tylko tworzy bazę danych, ale również wprowadza do niej przykładowe dane - w tym również dane dotyczące użytkowników. Domyślnie utworzono cztery profile użytkoników. 
+W projekcie używam bazy danych **MySQL**. Folder `databaseSQL` zawiera pliki: `crudoneDB.sql` oraz `crudoneTestDB.sql`, które tworzą dwie bazy danych - zwykłą oraz testową. Plik `crudoneDB.sql` nie tylko tworzy bazę danych, ale również wprowadza do niej przykładowe dane - w tym również dane dotyczące użytkowników. Domyślnie utworzono cztery profile użytkoników. 
 
 Profil administratora - login: `Admini`, hasło: `Admini`
 
